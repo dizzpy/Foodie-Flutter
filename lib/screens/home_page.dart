@@ -142,6 +142,77 @@ class HomePage extends StatelessWidget {
                 titleHeadingRow(heading: 'Top if the week'),
                 SizedBox(height: 20),
                 Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(11, 0, 0, 0),
+                        width: 114,
+                        height: 114,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFF7F7F7),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.65),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 15),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Avocado Salad ',
+                              style: TextStyle(
+                                color: Color(0xFF363636),
+                                fontSize: 18.38,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              '31 min',
+                              style: TextStyle(
+                                color: Color(0xFF909FA7),
+                                fontSize: 12.98,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: '\$',
+                                    style: TextStyle(
+                                      color: Color(0xFFFF6A6A),
+                                      fontSize: 17.30,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: '15.75',
+                                    style: TextStyle(
+                                      color: colorMainRed,
+                                      fontSize: 19.46,
+                                      fontWeight: FontWeight.bold,
+                                      height: 0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                   width: 334,
                   height: 136,
                   decoration: ShapeDecoration(
@@ -155,10 +226,10 @@ class HomePage extends StatelessWidget {
                         blurRadius: 68.12,
                         offset: Offset(0, 1.08),
                         spreadRadius: 0,
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
