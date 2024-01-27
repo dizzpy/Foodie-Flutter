@@ -59,6 +59,27 @@ class _ProductItemState extends State<ProductItem> {
           ),
         ],
       ),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            Container(
+              child: Image.asset(
+                'images/foodItems/wings.png',
+                height: 150,
+                width: 150,
+                fit: BoxFit.contain,
+              ),
+              decoration: BoxDecoration(
+                  color: Color(0xFFF7F7F7),
+                  borderRadius: BorderRadius.circular(20)),
+              height: 260,
+              width: double.infinity,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
