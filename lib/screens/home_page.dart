@@ -86,6 +86,7 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     children: [
                       MenuItem(
+                        imagePath: 'images/foodItems/noodles.png',
                         backColor: colorMainRed,
                         labelName: 'Noodless',
                         labelTextColor: colorWhite,
@@ -94,6 +95,7 @@ class HomePage extends StatelessWidget {
                         width: 10.0,
                       ),
                       MenuItem(
+                        imagePath: 'images/foodItems/sushi.png',
                         backColor: colorLightGrey,
                         labelName: 'Sushi',
                         labelTextColor: colorMainBlack,
@@ -102,6 +104,7 @@ class HomePage extends StatelessWidget {
                         width: 10.0,
                       ),
                       MenuItem(
+                        imagePath: 'images/foodItems/ramen.png',
                         backColor: colorLightGrey,
                         labelName: 'Ramen',
                         labelTextColor: colorMainBlack,

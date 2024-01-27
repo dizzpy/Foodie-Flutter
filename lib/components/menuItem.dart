@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/const/color.dart';
+// import 'package:foodie/const/color.dart';
 
 class MenuItem extends StatelessWidget {
   const MenuItem({
     required this.backColor,
     required this.labelTextColor,
     required this.labelName,
+    required this.imagePath,
   });
 
   final Color backColor;
   final Color labelTextColor;
   final String labelName;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +24,10 @@ class MenuItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
+          Image.asset(
+            imagePath,
             width: 40,
             height: 40,
-            decoration: ShapeDecoration(
-              color: colorMainBlack,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(98.64),
-              ),
-            ),
           ),
           SizedBox(width: 10),
           Text(
