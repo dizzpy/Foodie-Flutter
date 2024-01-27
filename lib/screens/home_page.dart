@@ -113,7 +113,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 30.0),
-                titleHeadingRow(heading: 'Populer'),
+                titleHeadingRow(heading: 'Popular'),
                 SizedBox(height: 30.0),
                 Container(
                   child: SingleChildScrollView(
