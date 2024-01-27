@@ -141,7 +141,12 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 20),
                 titleHeadingRow(heading: 'Top of the Week'),
                 SizedBox(height: 20),
-                bottomCardItem(),
+                bottomCardItem(
+                  imagePath: 'images/foodItems/salad.png',
+                  foodName: 'Avocado Salad',
+                  duration: '31 min',
+                  price: '15.75',
+                ),
               ],
             ),
           ),
@@ -152,9 +157,16 @@ class HomePage extends StatelessWidget {
 }
 
 class bottomCardItem extends StatelessWidget {
-  const bottomCardItem({
-    super.key,
-  });
+  const bottomCardItem(
+      {required this.foodName,
+      required this.duration,
+      required this.price,
+      required this.imagePath});
+
+  final String foodName;
+  final String duration;
+  final String price;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +208,7 @@ class bottomCardItem extends StatelessWidget {
           Row(
             children: [
               Container(
-                child: Image.asset('images/foodItems/salad.png'),
+                child: Image.asset(imagePath),
                 width: 114,
                 height: 114,
                 decoration: ShapeDecoration(
@@ -221,7 +233,7 @@ class bottomCardItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Avocado Salad ',
+                      foodName,
                       style: TextStyle(
                         color: Color(0xFF363636),
                         fontSize: 18.38,
@@ -232,7 +244,7 @@ class bottomCardItem extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      '31 min',
+                      duration,
                       style: TextStyle(
                         color: Color(0xFF909FA7),
                         fontSize: 12.98,
@@ -256,7 +268,7 @@ class bottomCardItem extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: '15.75',
+                            text: price,
                             style: TextStyle(
                               color: colorMainRed,
                               fontSize: 19.46,
