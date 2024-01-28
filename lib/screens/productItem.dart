@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/alert/alertless.dart';
+import 'package:foodie/components/foodMoreDetails.dart';
 import 'package:foodie/const/color.dart';
 
 class ProductItemPage extends StatefulWidget {
@@ -105,7 +106,11 @@ class _ProductItemPageState extends State<ProductItemPage> {
                             print(itemCount);
                           } else {
                             // Display alert or message
-                            showAlertDialog(context);
+                            AlertDialogWidget.showAlertDialog(
+                              context,
+                              'Error',
+                              'Item count cannot be less than 0.',
+                            );
                           }
                         });
                       },
@@ -140,6 +145,119 @@ class _ProductItemPageState extends State<ProductItemPage> {
                 ),
               ),
             ),
+            SizedBox(height: 20),
+            //other things
+            foodMoreDetails(ratings: '4.8', calories: '150', duration: '18'),
+            //item name
+            SizedBox(height: 15),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Chicken Pieces',
+                style: TextStyle(
+                  color: colorMainBlack,
+                  fontSize: 29,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            //item description
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget metus gravida aliquam. Nulla facilisi. Donec euismod, nisl eget aliquet ultricies, nisl nisl aliquet nisl, vitae aliquam nisl nisl',
+                style: TextStyle(
+                  color: colorSecondaryBlack,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            //item price
+            Container(
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Total Price',
+                        style: TextStyle(
+                          color: Color(0xFF4F4F4F),
+                          fontSize: 16.68,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '\$',
+                              style: TextStyle(
+                                color: Color(0xFFFF6A6A),
+                                fontSize: 20.91,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '34.59',
+                              style: TextStyle(
+                                color: Color(0xFFFF6A6A),
+                                fontSize: 23.52,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                height: 0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 32),
+                  GestureDetector(
+                    onTap: () {
+                      AlertDialogWidget.showAlertDialog(
+                        context,
+                        'Succsessful',
+                        'Your item added to cart.',
+                      );
+                    },
+                    child: Container(
+                        width: 200,
+                        height: 60,
+                        padding: EdgeInsets.fromLTRB(33, 15, 33, 15),
+                        decoration: BoxDecoration(
+                          color: colorMainRed,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.add_shopping_cart,
+                              color: Colors.white,
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              'Add to Cart',
+                              style: TextStyle(
+                                color: colorWhite,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
           ],
         ),
       ),
