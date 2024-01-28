@@ -1,7 +1,7 @@
 <h1>Foodie App</h1>
 
 <p>Food app ui clone using flutter</p>
-<a href="https://dribbble.com/shots/23476807-Food-App-Ui-Design">Ui Design</a>
+ <a href="https://dribbble.com/shots/23476807-Food-App-Ui-Design">See Full Ui Design</a>
 
 <br>
 <br>
