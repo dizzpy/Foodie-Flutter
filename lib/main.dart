@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home_page.dart';
+// import 'screens/home_page.dart';
+// import 'package:foodie/screens/productItem.dart';
 import 'screens/productItem.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductItem(),
+      home: ProductItemPage(),
     );
   }
 }

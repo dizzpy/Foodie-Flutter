@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/alert/alertless.dart';
 import 'package:foodie/const/color.dart';
 
-class ProductItem extends StatefulWidget {
-  const ProductItem({super.key});
+class ProductItemPage extends StatefulWidget {
+  const ProductItemPage({Key? key}) : super(key: key);
 
   @override
-  State<ProductItem> createState() => _ProductItemState();
+  _ProductItemPageState createState() => _ProductItemPageState();
 }
 
-class _ProductItemState extends State<ProductItem> {
+class _ProductItemPageState extends State<ProductItemPage> {
+  int itemCount = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            print('Home Button Pressed');
+            print('Back Button Pressed');
           },
           child: Container(
             height: 30.0,
@@ -37,7 +40,7 @@ class _ProductItemState extends State<ProductItem> {
         actions: [
           GestureDetector(
             onTap: () {
-              print('Home Button Pressed');
+              print('Favorite Button Pressed');
             },
             child: Container(
               padding: EdgeInsets.all(5),
@@ -72,11 +75,71 @@ class _ProductItemState extends State<ProductItem> {
                 fit: BoxFit.contain,
               ),
               decoration: BoxDecoration(
-                  color: Color(0xFFF7F7F7),
-                  borderRadius: BorderRadius.circular(20)),
+                color: Color(0xFFF7F7F7),
+                borderRadius: BorderRadius.circular(20),
+              ),
               height: 260,
               width: double.infinity,
-            )
+            ),
+            SizedBox(height: 20),
+            Image.asset(
+              'images/imgNav.png',
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: 120,
+              decoration: BoxDecoration(
+                color: colorMainRed,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (itemCount > 0) {
+                            itemCount--;
+                            print(itemCount);
+                          } else {
+                            // Display alert or message
+                            showAlertDialog(context);
+                          }
+                        });
+                      },
+                      child: Icon(
+                        Icons.remove,
+                        color: colorWhite,
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Text(
+                      itemCount.toString(),
+                      style: TextStyle(
+                        color: colorWhite,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          itemCount++;
+                          print(itemCount);
+                        });
+                      },
+                      child: Icon(
+                        Icons.add,
+                        color: colorWhite,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
