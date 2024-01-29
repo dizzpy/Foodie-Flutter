@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/screens/home_page.dart';
 // import 'screens/home_page.dart';
 // import 'package:foodie/screens/productItem.dart';
 import 'screens/productItem.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductItemPage(),
+      home: HomePage(),
     );
   }
 }
